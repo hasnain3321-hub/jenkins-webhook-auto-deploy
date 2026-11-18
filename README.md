@@ -32,3 +32,6 @@ http://localhost:8082
 This is a local learning environment.
 The deployment includes candidate validation
 and basic recovery logic, not zero-downtime deployment.
+
+## Webhook Test
+Testing GitHub webhook automatic deployment - Version 2.0.
