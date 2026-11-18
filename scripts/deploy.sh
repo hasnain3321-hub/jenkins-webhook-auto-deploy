@@ -49,8 +49,9 @@ if docker run -d \
   --name "$CONTAINER" \
   -p 127.0.0.1:${PORT}:80 \
   "$IMAGE" &&
-  curl --retry 10 --retry-delay 2 \
-    --retry-connrefused -fsS \
+  curl --retry 15 --retry-delay 2 \
+    --retry-all-errors --retry-connrefused \
+    --connect-timeout 3 --max-time 5 -fsS \
     http://127.0.0.1:${PORT}/ \
     | grep -q "Deployment Successful"; then
   echo "Deployment successful!"
